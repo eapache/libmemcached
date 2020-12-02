@@ -79,6 +79,7 @@ static memcached_return_t connect_poll(memcached_instance_st* server, const int 
                                memcached_literal_param("The time to wait for a connection to be established was set to zero which produces a timeout to every call to poll()."));
   }
 
+  // FIXME count poll time here too
   while (--loop_max) // Should only loop on cases of ERESTART or EINTR
   {
     int number_of;
